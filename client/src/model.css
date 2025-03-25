@@ -1,11 +1,40 @@
-Button{
-    color: white;
-    text-align: center;
-    height: 20px;
-    width: 60px;
-    font-style: oblique;
+.delete {
+    background-color: red;
+    width: 3%;
+    height: 3%;
     font-size: 1rem;
-  }
-  Button:hover {
+    border-radius: 50% !important;
+    border: none;
+}
+
+.save {
+    background-color: blue;
+    width: 3%;
+    height: 3%;
+    font-size: 1rem;
+    border-radius: 50% !important;
+    border: none;
+}
+
+.add {
+    background-color: green;
+    width: 3%;
+    height: 3%;
+    font-size: 1rem;
+    border-radius: 50% !important;
+    border: none;
+}
+
+.update {
+    background-color: yellow;
+    width: 3%;
+    height: 3%;
+    font-size: 1rem;
+    border-radius: 50% !important;
+    border: none;
+}
+
+
+.models-Button:hover {
     filter: brightness(1.2);
-  }
+}

@@ -1,11 +1,20 @@
 .App {
   text-align: center;
+  background-image: url('../public/HomePage.png');
+  background-size: cover;
+  background-position: center bottom 25%;
+  background-repeat: no-repeat;
 }
 .my-app{
-  background-color: #CCFFFF;
   font-size: 4rem;
   color:white;
   font-style: oblique;
+  
+  text-shadow: 
+  -2px -2px 0 black, 
+   2px -2px 0 black, 
+  -2px  2px 0 black, 
+   2px  2px 0 black;
 }
 
 .App-logo {
@@ -37,12 +46,18 @@
 }
 
 Button{
+  width: 22%;
   color: white;
   text-align: center;
-  height: 100vh;
-  width: 25%;
+  aspect-ratio: 1/1;
   font-style: oblique;
-  font-size: 5.5rem;
+  font-size: 5vw;
+  border-radius: 15%;
+  margin-bottom: 1%;
+  margin-top: 1%;
+  margin-left: 7%;
+  margin-right: 7%;
+  border: none;
 }
 Button:hover {
   filter: brightness(1.2);
