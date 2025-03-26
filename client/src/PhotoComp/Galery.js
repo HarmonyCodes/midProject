@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
-//import '../model.css'
+import '../model.css'
 import 'primeicons/primeicons.css';
 import { Button } from "primereact/button";
 import Axios from "axios"
 import AddPhoto from "./AddPhoto";
 import UpdatePhoto from "./UpdatePhoto";
-const DeletePhoto= ({photo, onDelete})=>{
+const DeletePhoto= ({Id, onDelete})=>{
     const handleDelete= async()=>{
         const{data:responseData}= await Axios.delete("http://localhost:1234/Photos/", {
-            data:{id:photo._id}
+            data:{id:Id}
         })
         console.log(responseData)
         if (onDelete) onDelete()
     }
     return<div>
-        <Button onClick={handleDelete} >delete</Button>
+        <Button onClick={handleDelete} aria-label="Cancel" icon="pi pi-trash" iconPos="center" className="delete"/>
     </div>
 }
 const AllPhotos=()=>{
@@ -31,14 +31,16 @@ const AllPhotos=()=>{
     <div>
         <AddPhoto onAdd={fetchPhotos} />
         {photos.map((photo, index)=>{
-            return <div>
+            return <div style={{ backgroundColor: '#a0bc9c'}} className="item">
                 {photo.title}
+                <br/>
                 <img src={`/images/${photo.imageUrl}`} alt="תמונה" />
+                <br/>
                 <UpdatePhoto onUpdate={fetchPhotos} Id={photo._id} />
-                <DeletePhoto onDelete={fetchPhotos} photo={photo}/>
+                <DeletePhoto onDelete={fetchPhotos} Id={photo._id}/>
                 </div>
         })}
     </div>
     </>
-}
+}  
 export default AllPhotos

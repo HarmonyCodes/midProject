@@ -31,8 +31,9 @@ const AllPosts=()=>{
     <div className="models">
         <AddPost onAdd={fetchPosts} />
         {posts.map((post, index)=>{
-            return <div>
+            return <div style={{ backgroundColor: '#dda8a8'}} className="item">
                 {post.title}
+                <br/>
                 <UpdatePost onUpdate={fetchPosts} Id={post._id} />
                 <DeletePost onDelete={fetchPosts} post={post}/>
                 </div>

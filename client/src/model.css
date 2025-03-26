@@ -1,40 +1,40 @@
-.delete {
-    background-color: red;
-    width: 3%;
-    height: 3%;
-    font-size: 1rem;
+.delete, .update, .complete, .save, .add {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1/1; 
+    font-size: 1.5rem;
     border-radius: 50% !important;
     border: none;
 }
+.delete { background-color: red; width: 17%; height: 17%; }
+.save { background-color: blue; width: 17%; height: 17%; }
+.add { background-color: green; width: 3.5%; height: 3.5%; }
+.update { background-color: yellow; width: 17%; height: 17%; }
+.complete { background-color: palevioletred; width: 17%; height: 17%; }
 
-.save {
-    background-color: blue;
-    width: 3%;
-    height: 3%;
-    font-size: 1rem;
-    border-radius: 50% !important;
-    border: none;
+.item{
+    /*border-style: dotted;
+    background-color: white;*/
+    color: white;
+    width: 22%;
+    /*height: 50%;
+    display: flex;*/
+    align-items: center;
+    aspect-ratio: 1/1;
+    font-size: 2rem;
+    border-radius: 15%;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left: 7%;
+    margin-right: 7%;
 }
-
-.add {
-    background-color: green;
-    width: 3%;
-    height: 3%;
-    font-size: 1rem;
-    border-radius: 50% !important;
-    border: none;
-}
-
-.update {
-    background-color: yellow;
-    width: 3%;
-    height: 3%;
-    font-size: 1rem;
-    border-radius: 50% !important;
-    border: none;
-}
-
 
 .models-Button:hover {
     filter: brightness(1.2);
+}
+img{
+    width: 50%;
+    height: 35%;
+    border-radius: 2vw;
 }

@@ -6,7 +6,7 @@ const photoSchema= new mongoose.Schema({
     }, 
     imageUrl:{
         type:String,
-        required:true,
+        default: 'https://example.com/default.jpg',
     }},
     {
         timestamps:true

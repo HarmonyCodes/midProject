@@ -24,7 +24,7 @@ const getAllTodos= async(req,res)=>{
 
 
 const updateTodo= async(req,res)=>{
-    const {id, title,tags,completed}= req.body
+    const {id, title,tags}= req.body
     if(!id&&(!title||!tags)){
         return res.status(400).json({message: 'fields are required'})
     }
@@ -39,13 +39,13 @@ const updateTodo= async(req,res)=>{
 }
 
 const deleteTodo= async(req,res)=>{
-    const{_id}=req.body
-    const todo= await Todo.findById(_id).exec()
+    const{id}=req.body
+    const todo= await Todo.findById(id).exec()
     if(!todo){
         return res.status(400).json({ message: 'Todo not found'})
     }
     const result= await todo.deleteOne()
-    const reply= `Todo ${result.title} ID ${result._id} deleted`
+    const reply= `Todo ${result.title} ID ${result.id} deleted`
     res.json(reply)
 }
 const getTodoById= async(req,res)=>{
@@ -67,6 +67,19 @@ const updateTodoComplete = async (req, res) => {
     const updateTodo= await todo.save()
     res.json(`'${updateTodo.title}'update`)
 }
+/*const updateTodoComplete = async (req, res) => {
+    const { id } = req.params;
+    const todo = await Todo.findById(id).exec();
+
+    if (!todo) {
+        return res.status(400).json({ message: "Todo not found" });
+    }
+
+    todo.completed = !todo.completed;
+    const updatedTodo = await todo.save();
+    res.json({ message: `'${updatedTodo.title}' updated` });
+};*/
+
 module.exports = {
     getAllTodos,
     createNewTodo,

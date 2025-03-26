@@ -1,10 +1,16 @@
 import {useState} from "react"
 import Axios from "axios"
+import { Button } from "primereact/button"
+import '../model.css'
+import 'primeicons/primeicons.css';
+import { InputText } from 'primereact/inputtext'; 
+import { FloatLabel } from 'primereact/floatlabel';
 const UpdateUser=({onUpdate, Id})=>{
     const [name, setName]= useState("")
     const [email, setEmail]= useState("")
     const [address, setAddress]= useState("")
     const [phone, setPhone]= useState("")
+    const [showForm, setShowForm] = useState(false);
 
     const submitForm= async(e)=>{
         e.preventDefault()
@@ -15,29 +21,35 @@ const UpdateUser=({onUpdate, Id})=>{
         setEmail("");
         setAddress("");
         setPhone("");
+        setShowForm(false);
     }
     return<>
+    <Button onClick={() => setShowForm(!showForm)} icon="pi pi-pen-to-square" className="update"/>
+    {showForm && (
     <form onSubmit={submitForm}>
-    <input
+        <FloatLabel>
+    <InputText
         value={name}
         placeholder="Add name"
-        onChange={(e)=>setName(e.target.value)}/>
-        <input
+        onChange={(e)=>setName(e.target.value)}/></FloatLabel>
+        <FloatLabel>
+        <InputText
         value={email}
         placeholder="Add email"
-        onChange={(e)=>setEmail(e.target.value)}/>
-        <input
+        onChange={(e)=>setEmail(e.target.value)}/></FloatLabel>
+        <FloatLabel>
+        <InputText
         value={address}
         placeholder="Add address"
-        onChange={(e)=>setAddress(e.target.value)}/>
-        <input
+        onChange={(e)=>setAddress(e.target.value)}/></FloatLabel>
+        <FloatLabel>
+        <InputText
         value={phone}
         placeholder="Add phone"
-        onChange={(e)=>setPhone(e.target.value)}/>
-
-        <button type="submit">save</button>
+        onChange={(e)=>setPhone(e.target.value)}/></FloatLabel>
+    <Button type="submit"  icon="pi pi-save" className="save"/>
     </form>
-    
+    )}
     </>
 }
 export default UpdateUser

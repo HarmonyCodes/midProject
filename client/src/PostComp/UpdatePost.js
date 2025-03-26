@@ -19,10 +19,8 @@ const UpdatePost=({onUpdate, Id})=>{
         setBody("");
         setShowForm(false);
     }
-    return        <>
-    
+    return<>
     <Button onClick={() => setShowForm(!showForm)} icon="pi pi-pen-to-square" className="update"/>
-
     {showForm && ( 
         <form onSubmit={submitForm}>
 

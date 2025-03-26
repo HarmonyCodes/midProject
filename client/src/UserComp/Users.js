@@ -1,5 +1,8 @@
 import { useEffect, useState } from "react";
 import Axios from "axios"
+import '../model.css'
+import 'primeicons/primeicons.css';
+import { Button } from "primereact/button";
 import AddUser from "./AddUser"
 import UpdateUser from "./UpdateUser";
 const DeleteUser= ({user, onDelete})=>{
@@ -11,7 +14,7 @@ const DeleteUser= ({user, onDelete})=>{
         if (onDelete) onDelete()
     }
     return<div>
-        <button onClick={handleDelete}>delete</button>
+        <Button onClick={handleDelete} aria-label="Cancel" icon="pi pi-trash" className="delete"/>
     </div>
 }
 const Users=()=>{
@@ -28,8 +31,9 @@ const Users=()=>{
     <div>
         <AddUser onAdd={fetchUsers} />
         {users.map((user, index)=>{
-            return <div>
+            return <div style={{ backgroundColor: '#bda5c3'}} className="item">
                 {user.name}
+                <br/>
                 <UpdateUser onUpdate={fetchUsers} Id={user._id} />
                 <DeleteUser onDelete={fetchUsers} user={user}/>
                 </div>

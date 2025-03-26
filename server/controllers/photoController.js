@@ -26,7 +26,7 @@ const getAllPhotos= async(req,res)=>{
 
 const updatePhoto= async(req,res)=>{
     const {_id, title, imageUrl}= req.body
-    if(!_id||(!title && !imageUrl)){
+    if(!_id&&(!title || !imageUrl)){
         return res.status(400).json({message: 'fields are required'})
     }
     const photo= await Photo.findById(_id).exec()
@@ -41,7 +41,7 @@ const updatePhoto= async(req,res)=>{
 
 const deletePhoto= async(req,res)=>{
     const{id}=req.body
-    const photo= await Photo.findById(_id).exec()
+    const photo= await Photo.findById(id).exec()
     if(!photo){
         return res.status(400).json({ message: 'Photo not found'})
     }
