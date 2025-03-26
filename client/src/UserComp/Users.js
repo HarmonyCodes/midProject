@@ -28,7 +28,7 @@ const Users=()=>{
     }, [])
     if(users.length===0) return <h2>no users</h2>
     return <>
-    <div>
+    <div className="models">
         <AddUser onAdd={fetchUsers} />
         {users.map((user, index)=>{
             return <div style={{ backgroundColor: '#bda5c3'}} className="item">

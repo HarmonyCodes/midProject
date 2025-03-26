@@ -40,7 +40,7 @@ const TodoList=()=>{
     }, [])
     if(todos.length===0) return <h2>no todos</h2>
     return <>
-    <div>
+    <div className="models">
         <AddTodo onAdd={fetchTodos} />
         {todos.map((todo, index)=>{
             return <div style={{ backgroundColor: '#Fde6a1'}} className="item">

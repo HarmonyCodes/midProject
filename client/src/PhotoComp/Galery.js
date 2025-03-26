@@ -28,7 +28,7 @@ const AllPhotos=()=>{
     }, [])
     if(photos.length===0) return <h2>no photos</h2>
     return <>
-    <div>
+    <div className="models">
         <AddPhoto onAdd={fetchPhotos} />
         {photos.map((photo, index)=>{
             return <div style={{ backgroundColor: '#a0bc9c'}} className="item">

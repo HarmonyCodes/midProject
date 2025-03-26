@@ -1,3 +1,13 @@
+.models {
+    display: flex;
+    flex-wrap: wrap; 
+    width: 100%; 
+    overflow-x: auto;
+    margin-bottom: 1%;
+    margin-top: 1%;
+    margin-left: 7%;
+    margin-right: 7%;
+}
 .delete, .update, .complete, .save, .add {
     display: flex;
     align-items: center;
@@ -8,18 +18,14 @@
     border: none;
 }
 .delete { background-color: red; width: 17%; height: 17%; }
-.save { background-color: blue; width: 17%; height: 17%; }
+.save { background-color: blue; width: 57px; height: 57px; }
 .add { background-color: green; width: 3.5%; height: 3.5%; }
 .update { background-color: yellow; width: 17%; height: 17%; }
 .complete { background-color: palevioletred; width: 17%; height: 17%; }
 
 .item{
-    /*border-style: dotted;
-    background-color: white;*/
     color: white;
     width: 22%;
-    /*height: 50%;
-    display: flex;*/
     align-items: center;
     aspect-ratio: 1/1;
     font-size: 2rem;
