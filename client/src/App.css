@@ -1,33 +1,40 @@
 .App {
   text-align: center;
-  background-image: url('../public/HomePage.png');
+  background-image: url('../public/homePage.png');
   background-size: cover;
-  background-position: center bottom 25%;
   background-repeat: no-repeat;
+  background-position: center bottom 25%;
 }
-.my-app{
+
+.my-app {
   font-size: 4rem;
-  color:white;
-  font-style: oblique;
-  
-  text-shadow: 
-  -2px -2px 0 black, 
-   2px -2px 0 black, 
-  -2px  2px 0 black, 
-   2px  2px 0 black;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-style: italic;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
-  
-
 }
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
+}
+
+.common {
+  display: grid;
+  grid-template-rows: 70px 1fr 25px;
+  min-height: 100vh;
+}
+
+header,footer{
+  background-color: white;
+  display: grid;
+  place-content: center;
+  bottom: 0%;
 }
 
 .App-header {
@@ -45,20 +52,20 @@
   color: #61dafb;
 }
 
-Button{
-  width: 22%;
+Button {
+  border: none;
   color: white;
   text-align: center;
   aspect-ratio: 1/1;
+  width: 20%;
+  /* height: 190px;
+  width: 25%; */
   font-style: oblique;
-  font-size: 5vw;
-  border-radius: 15%;
-  margin-bottom: 1%;
-  margin-top: 1%;
-  margin-left: 7%;
-  margin-right: 7%;
-  border: none;
+  font-size: 80%;
+  border-radius: 20%;
+  margin: 3% 10% 3% 10%;
 }
+
 Button:hover {
   filter: brightness(1.2);
 }
@@ -67,7 +74,90 @@ Button:hover {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
+}
+
+.p-menubar .p-menuitem-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;  /* מרווח בין האייקון לטקסט */
+  font-size: 1.2rem; /* גודל טקסט נוח */
+  color: #dda8a8;
+  text-shadow: 0.5px 0.5px 2.5px rgba(0, 0, 0, 0.5);}
+
+.custom-menu-item {
+    display: flex;
+    flex-direction: row-reverse; /* הופך את הסדר */
+    align-items: center;
+    gap: 8px;
+}
+
+.p-menubar {
+  border-radius: 10px; 
+  padding: 8px 20px;
+}
+
+.p-menuitem-link {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  gap: 15px; /* רווח בין האייקון לטקסט */
+  font-size: 1.2rem; /* טקסט יותר ברור */
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s, 
+  background-color 0.3s;
+}
+
+/* 🎨 מעבר עכבר על קישור */
+.p-menuitem-link:hover {
+  background-color: #a0bc9c; /* צבע רקע במעבר */
+  color: white;
+  border-radius: 5px;
+}
+
+/* 🎨 האייקון בתוך הפריטים */
+.p-menuitem-link span:first-child {
+  font-size: 1.5rem; /* מגדיל את האייקון */
+  color: #fde6a1; /* צבע כחול */
+  text-shadow: #282c34;
+}
+
+/* 🎨 כשאייקון מופיע אחרי הטקסט */
+.custom-menu-item {
+  display: flex;
+  flex-direction: row-reverse; /* הופך את סדר הטקסט והאייקון */
+  align-items: center;
+  gap: 6px; /* יוצר רווח ביניהם */
+}
+
+/* 🎨 החיפוש בסוף התפריט */
+.p-menubar-end {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.p-inputtext {
+  border-radius: 20px; /* שדה חיפוש מעוגל */
+  padding: 8px;
+  color: #bda5c3;
+  border: 2px solid #dda8a8; 
+}
+.p-inputtext:focus{
+  border-radius:#fde6a1;
+}
+.p-menubar-end .p-inputtext {
+  width: 200px; 
+}
+.pi-bars{
+  color: #bda5c3;
+}
+.p-inputtext::placeholder,footer {
+  color: #bda5c3;
+  font-style: italic;
+  text-shadow: 0.5px 0.5px 2.5px rgba(0, 0, 0, 0.5);
 }
