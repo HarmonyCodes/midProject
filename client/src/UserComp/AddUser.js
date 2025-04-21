@@ -28,31 +28,26 @@ const AddUser=({onAdd})=>{
     <Button onClick={() => setShowForm(!showForm)} icon="pi pi-plus" className="add" />
     {showForm && (
     <form onSubmit={submitForm}>
-        <FloatLabel>
         <InputText
         value={name}
         placeholder="Add name"
-        onChange={(e)=>setName(e.target.value)}/></FloatLabel>
-        <FloatLabel>
+        onChange={(e)=>setName(e.target.value)}/>
         <InputText
         value={username}
         placeholder="Add username"
-        onChange={(e)=>setUsername(e.target.value)}/></FloatLabel>
-        <FloatLabel>
+        onChange={(e)=>setUsername(e.target.value)}/>
         <InputText
         value={email}
         placeholder="Add email"
-        onChange={(e)=>setEmail(e.target.value)}/></FloatLabel>
-        <FloatLabel>
+        onChange={(e)=>setEmail(e.target.value)}/>
         <InputText
         value={address}
         placeholder="Add address"
-        onChange={(e)=>setAddress(e.target.value)}/></FloatLabel>
-        <FloatLabel>
+        onChange={(e)=>setAddress(e.target.value)}/>
         <InputText
         value={phone}
         placeholder="Add phone"
-        onChange={(e)=>setPhone(e.target.value)}/></FloatLabel>
+        onChange={(e)=>setPhone(e.target.value)}/>
         <Button type="submit"  icon="pi pi-save" className="save"/>
     </form>
     )}

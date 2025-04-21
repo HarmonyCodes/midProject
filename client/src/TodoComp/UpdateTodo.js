@@ -24,20 +24,19 @@ const UpdateTodo=({onUpdate, Id})=>{
         setShowForm(false);
     }
     return<>
-        <Button onClick={() => setShowForm(!showForm)} icon="pi pi-pen-to-square" className="update"/>
+        <Button onClick={() => setShowForm(!showForm)} icon="pi pi-pencil" className="update"/>
     {showForm && (
     <form onSubmit={submitForm}>
-        <FloatLabel>
+        
     <InputText
         value={title}
         placeholder="Add title"
-        onChange={(e)=>setTitle(e.target.value)}/></FloatLabel>
-        <FloatLabel>
+        onChange={(e)=>setTitle(e.target.value)}/>
                 <InputText
           value={tags.join(", ")} 
           placeholder="Add tags"
           onChange={handleTagsInput} 
-        /></FloatLabel>
+        />
 
 <Button type="submit"  icon="pi pi-save" className="save"/>
 

@@ -22,20 +22,16 @@ const AddTodo=({onAdd})=>{
     <Button onClick={() => setShowForm(!showForm)} icon="pi pi-plus" className="add" />
     {showForm && ( 
                 <form onSubmit={submitForm}>
-                    <FloatLabel>
                     <InputText
                         value={title}
                         placeholder="Add title"
                         onChange={(e) => setTitle(e.target.value)}
                     />
-                    </FloatLabel>
-                    <FloatLabel>
          <InputText
         value={tags}
         placeholder="Add tags"
         onChange={(e) => setTags(e.target.value.split(",").map(tag => tag.trim()))}
 />
-</FloatLabel>
 <Button type="submit"  icon="pi pi-save" className="save"/>
     </form>
     )}

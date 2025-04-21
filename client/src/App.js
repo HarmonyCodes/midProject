@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { PrimeReactProvider } from 'primereact/api';
-import { PrimeIcons } from 'primereact/api';
 import 'primeicons/primeicons.css';
 import { Button } from "primereact/button";
 import './App.css';

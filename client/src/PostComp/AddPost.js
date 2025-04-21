@@ -23,20 +23,16 @@ const AddPost=({onAdd})=>{
 
             {showForm && ( 
                 <form onSubmit={submitForm}>
-                    <FloatLabel>
                     <InputText
                         value={title}
                         placeholder="Add title"
                         onChange={(e) => setTitle(e.target.value)}
                     />
-                    </FloatLabel>
-                    <FloatLabel>
                     <InputText
                         value={body}
                         placeholder="Add body"
                         onChange={(e) => setBody(e.target.value)}
                     />
-                    </FloatLabel>
                     <Button type="submit"  icon="pi pi-save" className="save"/>
                 </form>
             )}

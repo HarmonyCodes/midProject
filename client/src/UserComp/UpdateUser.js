@@ -24,29 +24,26 @@ const UpdateUser=({onUpdate, Id})=>{
         setShowForm(false);
     }
     return<>
-    <Button onClick={() => setShowForm(!showForm)} icon="pi pi-pen-to-square" className="update"/>
+    <Button onClick={() => setShowForm(!showForm)} icon="pi pi-pencil" className="update"/>
     {showForm && (
     <form onSubmit={submitForm}>
-        <FloatLabel>
+    
     <InputText
         value={name}
         placeholder="Add name"
-        onChange={(e)=>setName(e.target.value)}/></FloatLabel>
-        <FloatLabel>
+        onChange={(e)=>setName(e.target.value)}/>
         <InputText
         value={email}
         placeholder="Add email"
-        onChange={(e)=>setEmail(e.target.value)}/></FloatLabel>
-        <FloatLabel>
+        onChange={(e)=>setEmail(e.target.value)}/>
         <InputText
         value={address}
         placeholder="Add address"
-        onChange={(e)=>setAddress(e.target.value)}/></FloatLabel>
-        <FloatLabel>
+        onChange={(e)=>setAddress(e.target.value)}/>
         <InputText
         value={phone}
         placeholder="Add phone"
-        onChange={(e)=>setPhone(e.target.value)}/></FloatLabel>
+        onChange={(e)=>setPhone(e.target.value)}/>
     <Button type="submit"  icon="pi pi-save" className="save"/>
     </form>
     )}

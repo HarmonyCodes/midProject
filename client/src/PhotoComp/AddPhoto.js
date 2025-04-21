@@ -23,20 +23,17 @@ const AddPhoto=({onAdd})=>{
 
             {showForm && ( 
                 <form onSubmit={submitForm}>
-                    <FloatLabel>
+                    
                     <InputText
                         value={title}
                         placeholder="Add title"
                         onChange={(e) => setTitle(e.target.value)}
                     />
-                    </FloatLabel>
-                    <FloatLabel>
                     <InputText
                         value={imageUrl}
                         placeholder="Add imageUrl"
                         onChange={(e) => setImageUrl(e.target.value)}
                     />
-                    </FloatLabel>
                     <Button type="submit"  icon="pi pi-save" className="save"/>
                 </form>
             )}

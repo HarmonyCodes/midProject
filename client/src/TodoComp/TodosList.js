@@ -23,6 +23,7 @@ const UpdateComplete= ({Id, onComplete})=>{
          })
         console.log(responseData)
         if (onComplete) onComplete()
+        alert("COMPLETED")
         
     }
     return<div>
